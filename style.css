@@ -10,21 +10,19 @@
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
   --switch-bg-url: url(assets/assets/moon-stars.svg);
-
 }
 
-.light{
+.light {
   --text-color: black;
   --bg-url: url(assets/assets/bg-mobile-light.jpg);
   --stroke-color: black;
   --surface-color: rgba(0, 0, 0, 0.05);
   --switch-bg-url: url(assets/assets/sun.svg);
-
-
 }
 
 body {
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 
 body * {
@@ -36,7 +34,8 @@ body * {
   width: 100%;
   max-width: 588px;
   margin: 56px auto 0px;
-  padding: 24px;}
+  padding: 24px;
+}
 
 #profile {
   text-align: center;
@@ -45,7 +44,6 @@ body * {
 
 #profile img {
   width: 112px;
-
 }
 
 #profile p {
@@ -110,29 +108,23 @@ footer {
   padding: 24px 0;
 }
 
-
-#switch button{
+#switch button {
   width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
   position: absolute;
-  margin-right: 40px;
-  margin-top: -2px;
+  animation: volta 0.5s forwards;
   cursor: pointer;
-
-
+  margin-right: 40px;
 }
 
-.light #switch button{
-  margin-left: 74px;
-  margin-top: -2px;
+.light #switch button {
+  animation: desliza 0.5s forwards;
+}
 
-
-} 
-
-#switch span{
+#switch span {
   display: block;
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
@@ -141,8 +133,32 @@ footer {
   border-radius: 9999px;
 }
 
-#switch{
+#switch {
   justify-content: center;
   display: flex;
+}
+
+@keyframes desliza{
+  from{
+  margin-right: 40px;
+  margin-top: -2px;
+  }
+  
+  to{
+      margin-left: 74px;
+      margin-top: -2px;
+  }
+}
+
+@keyframes volta{
+  from{
+      margin-left: 74px;
+      margin-top: -2px;
+  }
+
+  to{
+      margin-right: 40px;
+      margin-top: -2px;
+  }
 
 }
